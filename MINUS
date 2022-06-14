@@ -1,0 +1,18 @@
+SELECT 
+    P.PRODUCT_ID, 
+    pr.product_name, 
+    pr.count_product, 
+    pr.price_sales
+FROM (
+SELECT PR.PRODUCT_ID
+FROM HR.PRODUCTS PR
+
+MINUS
+
+SELECT S.PRODUCT_ID
+FROM HR.SALES S ) P
+
+LEFT JOIN HR.PRODUCTS PR
+ON P.PRODUCT_ID = PR.PRODUCT_ID
+ORDER BY 1
+;
