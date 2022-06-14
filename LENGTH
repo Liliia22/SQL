@@ -1,4 +1,5 @@
 SELECT *
 FROM HR.EMPLOYEES EM
 WHERE LENGTH (EM.FIRST_NAME) =  (SELECT  MAX (LENGTH (EM.FIRST_NAME) ) AS LENGTH 
-                                 FROM HR.EMPLOYEES EM ) ;
+                                 FROM HR.EMPLOYEES EM ) 
+;
